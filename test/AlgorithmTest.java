@@ -46,10 +46,11 @@ public class AlgorithmTest {
         assertEquals(correct,resultSize);
     }
 
-    /*@Test
-    public void itShouldReturnSpecifiedAmountOfElementsAboveBaseElementWithinAGrid() {
+    @Test
+    public void itShouldReturnSpecifiedAmountOfElementsAboveBaseElementInGridRow() {
+        Algorithm algo = new Algorithm();
 
-    }*/
+    }
 
 
 }
