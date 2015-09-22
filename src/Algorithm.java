@@ -11,17 +11,16 @@ public class Algorithm {
         return this.testsAreWorkingMessage;
     }
 
-    public ArrayList <Integer> convertStringIntoGrid(String stringToConvert) {
-        ArrayList <Integer> result = new ArrayList<>();
-        String[] converted = stringToConvert.split(" ");
+    public String[] convertStringIntoIntegerArray(String stringToConvert) {
+        String[] breakUpString = stringToConvert.split("\\s+");
         int counter = 0;
-        while(counter < converted.length) {
-            String frontOfInt = converted[counter][0];
-            int convertedToInt = Integer.parseInt(converted[counter].trim());
-            result.add(convertedToInt);
+        while(counter < breakUpString.length) {
+            if(breakUpString[counter].substring(0,1) == "0") {
+                
+            }
             counter++;
         }
-        return result;
+
     }
 }
 
