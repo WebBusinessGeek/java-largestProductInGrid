@@ -45,6 +45,28 @@ public class Algorithm {
         }
         return returnValue;
     }
+
+    public ArrayList <Integer> getElementsToRightInGridRow(ArrayList <Integer> grid, int baseElement, int elementsToGet) {
+        ArrayList <Integer> returnValue = new ArrayList<>();
+        int limit = baseElement + elementsToGet;
+        int pointer = baseElement;
+        while(pointer <= limit) {
+            returnValue.add(grid.get(pointer));
+            pointer ++;
+        }
+        return returnValue;
+    }
+
+    public ArrayList <Integer> getElementsToLeftInGridRow(ArrayList <Integer> grid, int baseElement, int elementsToGet) {
+        ArrayList <Integer> returnValue = new ArrayList<>();
+        int limit = baseElement - elementsToGet;
+        int pointer = baseElement;
+        while(pointer >= limit) {
+            returnValue.add(grid.get(pointer));
+            pointer--;
+        }
+        return returnValue;
+    }
 }
 
 
