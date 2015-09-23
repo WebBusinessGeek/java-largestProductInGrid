@@ -28,9 +28,11 @@ public class Algorithm {
         ArrayList<Integer> returnValue = new ArrayList<>();
         int limit = baseElement - (elementsToGet * columnsInGrid);
         int pointer = baseElement;
-        while(pointer >= limit) {
-            returnValue.add(grid.get(pointer));
-            pointer -= columnsInGrid;
+        if(limit >= 0) {
+            while(pointer >= limit) {
+                returnValue.add(grid.get(pointer));
+                pointer -= columnsInGrid;
+            }
         }
         return returnValue;
     }
@@ -39,9 +41,11 @@ public class Algorithm {
         ArrayList <Integer> returnValue = new ArrayList<>();
         int limit = baseElement + (elementsToGet * columnsInGrid);
         int pointer = baseElement;
-        while(pointer <= limit) {
-            returnValue.add(grid.get(pointer));
-            pointer += columnsInGrid;
+        if(limit < grid.size()) {
+            while(pointer <= limit) {
+                returnValue.add(grid.get(pointer));
+                pointer += columnsInGrid;
+            }
         }
         return returnValue;
     }
