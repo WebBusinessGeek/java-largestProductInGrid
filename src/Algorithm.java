@@ -22,6 +22,17 @@ public class Algorithm {
         }
     return convertedIntegers;
     }
+
+    public ArrayList <Integer> getElementsAboveInGridColumn(ArrayList <Integer> grid, int columnsInGrid, int baseElement, int elementsToGet) {
+        ArrayList<Integer> returnValue = new ArrayList<>();
+        int limit = baseElement - (elementsToGet * columnsInGrid);
+        int pointer = baseElement;
+        while(pointer >= limit) {
+            returnValue.add(grid.get(pointer));
+            pointer -= columnsInGrid;
+        }
+        return returnValue;
+    }
 }
 
 
