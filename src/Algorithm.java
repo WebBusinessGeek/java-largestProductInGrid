@@ -54,12 +54,15 @@ public class Algorithm {
         ArrayList <Integer> returnValue = new ArrayList<>();
         int limit = baseElement + elementsToGet;
         int pointer = baseElement;
-        if(baseElement > itemsPerRow) {
-            while(baseElement > itemsPerRow){
-                itemsPerRow+=itemsPerRow;
+        int lastElementOnFirstRow = itemsPerRow - 1;
+
+        if(baseElement > lastElementOnFirstRow) {
+            while(baseElement > lastElementOnFirstRow){
+                lastElementOnFirstRow+=itemsPerRow;
             }
         }
-        if(elementsToGet < (itemsPerRow - baseElement)){
+
+        if(limit <= lastElementOnFirstRow){
             while(pointer <= limit) {
                 returnValue.add(grid.get(pointer));
                 pointer ++;
@@ -68,13 +71,24 @@ public class Algorithm {
         return returnValue;
     }
 
-    public ArrayList <Integer> getElementsToLeftInGridRow(ArrayList <Integer> grid, int baseElement, int elementsToGet) {
+    public ArrayList <Integer> getElementsToLeftInGridRow(ArrayList <Integer> grid, int itemsPerRow, int baseElement, int elementsToGet) {
         ArrayList <Integer> returnValue = new ArrayList<>();
         int limit = baseElement - elementsToGet;
         int pointer = baseElement;
-        while(pointer >= limit) {
-            returnValue.add(grid.get(pointer));
-            pointer--;
+        int firstElementOnFirstRow = 0;
+        int lastElementOnFirstRow = itemsPerRow -1;
+
+
+        while(!(baseElement < lastElementOnFirstRow)) {
+            firstElementOnFirstRow+=itemsPerRow;
+            lastElementOnFirstRow+=itemsPerRow;
+        }
+
+        if(limit >= firstElementOnFirstRow) {
+            while(pointer >= limit) {
+                returnValue.add(grid.get(pointer));
+                pointer--;
+            }
         }
         return returnValue;
     }
