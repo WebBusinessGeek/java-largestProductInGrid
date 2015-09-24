@@ -193,9 +193,39 @@ public class Algorithm {
         return returnValue;
     }
 
-    /*public ArrayList <Integer> getDownwardDiagonallyLeftElementsInGrid() {
+    public ArrayList <Integer> getDownwardDiagonallyLeftElementsInGrid(ArrayList <Integer> grid, int itemsPerRow, int baseElement, int elementsToGet) {
+        ArrayList <Integer> returnValue = new ArrayList<>();
+        int limit = (itemsPerRow * elementsToGet) + baseElement;
+        int pointer = baseElement;
+        int firstElementOnLastRow = grid.size() - itemsPerRow;
+        int firstElementOnFirstRow = 0;
+        int lastElementOnFirstRow = itemsPerRow - 1;
+        int elementDirectlyBelowBaseElement = baseElement + itemsPerRow;
+        boolean outOfRange = false;
 
-    }*/
+        while(lastElementOnFirstRow < elementDirectlyBelowBaseElement) {
+            lastElementOnFirstRow += itemsPerRow;
+            firstElementOnFirstRow += itemsPerRow;
+        }
+
+        int counter = 0;
+        while(counter < elementsToGet) {
+            if(elementDirectlyBelowBaseElement == firstElementOnFirstRow || elementDirectlyBelowBaseElement > firstElementOnLastRow) {
+                outOfRange = true;
+            }
+            elementDirectlyBelowBaseElement += (itemsPerRow - 1);
+            firstElementOnFirstRow += itemsPerRow;
+            counter++;
+        }
+
+        if(!outOfRange) {
+            while(pointer <= limit) {
+                returnValue.add(grid.get(pointer));
+                pointer += (itemsPerRow -1);
+            }
+        }
+        return returnValue;
+    }
 }
 
 
