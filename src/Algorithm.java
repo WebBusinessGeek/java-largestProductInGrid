@@ -163,7 +163,13 @@ public class Algorithm {
 
     public ArrayList <Integer> getDownwardDiagonallyRightElementsInGrid(ArrayList <Integer> grid, int itemsPerRow, int baseElement, int elementsToGet) {
         ArrayList <Integer> returnValue = new ArrayList<>();
+        int limit = baseElement + (elementsToGet * (itemsPerRow + 1));
+        int pointer = baseElement;
 
+        while(pointer <= limit) {
+            returnValue.add(grid.get(pointer));
+            pointer+=(itemsPerRow + 1);
+        }
         return returnValue;
     }
 
