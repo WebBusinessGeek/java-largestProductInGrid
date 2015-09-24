@@ -129,7 +129,35 @@ public class Algorithm {
 
     public ArrayList <Integer> getUpwardDiagonallyLeftElementsInGrid(ArrayList <Integer> grid, int itemsPerRow, int baseElement, int elementsToGet) {
         ArrayList <Integer> returnValue = new ArrayList<>();
+        int limit = baseElement - (elementsToGet * (itemsPerRow + 1));
+        int pointer = baseElement;
+        boolean outOfRange = false;
+        int firstElementInFirstRow = 0;
+        int firstElementInRow = 0;
+        int lastElementInFirstRow = itemsPerRow - 1;
+        int elementDirectlyAboveBaseElement = baseElement - itemsPerRow;
 
+        while(lastElementInFirstRow < elementDirectlyAboveBaseElement) {
+            lastElementInFirstRow+= itemsPerRow;
+            firstElementInRow+= itemsPerRow;
+        }
+
+        int count = 0;
+        while(count < elementsToGet) {
+            if((elementDirectlyAboveBaseElement == firstElementInRow) || (elementDirectlyAboveBaseElement < firstElementInFirstRow)) {
+                outOfRange = true;
+            }
+            elementDirectlyAboveBaseElement -= itemsPerRow + 1;
+            firstElementInRow -= itemsPerRow;
+            count++;
+        }
+
+        if(!outOfRange) {
+            while(pointer >= limit) {
+                returnValue.add(grid.get(pointer));
+                pointer-=(itemsPerRow + 1);
+            }
+        }
         return returnValue;
     }
 
