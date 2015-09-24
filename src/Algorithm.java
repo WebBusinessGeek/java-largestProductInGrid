@@ -165,10 +165,30 @@ public class Algorithm {
         ArrayList <Integer> returnValue = new ArrayList<>();
         int limit = baseElement + (elementsToGet * (itemsPerRow + 1));
         int pointer = baseElement;
+        boolean outOfRange = false;
+        int lastElementOnLastRow = grid.size() - 1;
+        int lastElementOnFirstRow = itemsPerRow - 1;
+        int elementDirectlyBelowBaseElement = baseElement + itemsPerRow;
 
-        while(pointer <= limit) {
-            returnValue.add(grid.get(pointer));
-            pointer+=(itemsPerRow + 1);
+        while(lastElementOnFirstRow < elementDirectlyBelowBaseElement) {
+            lastElementOnFirstRow += itemsPerRow;
+        }
+
+        int counter = 0;
+        while(counter < elementsToGet) {
+            if((elementDirectlyBelowBaseElement == lastElementOnFirstRow) || (elementDirectlyBelowBaseElement > lastElementOnLastRow)) {
+                outOfRange = true;
+            }
+            elementDirectlyBelowBaseElement += itemsPerRow + 1;
+            lastElementOnFirstRow += itemsPerRow;
+            counter++;
+        }
+
+        if(!outOfRange) {
+            while(pointer <= limit) {
+                returnValue.add(grid.get(pointer));
+                pointer+=(itemsPerRow + 1);
+            }
         }
         return returnValue;
     }

@@ -27,8 +27,8 @@
           <file leaf-file-name="Algorithm.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Algorithm.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.42727274">
-                  <caret line="170" column="39" selection-start-line="170" selection-start-column="39" selection-end-line="170" selection-end-column="39" />
+                <state vertical-scroll-proportion="1.0454545">
+                  <caret line="185" column="0" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -43,8 +43,8 @@
           <file leaf-file-name="AlgorithmTest.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test/AlgorithmTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.77272725">
-                  <caret line="512" column="4" selection-start-line="512" selection-start-column="4" selection-end-line="512" selection-end-column="4" />
+                <state vertical-scroll-proportion="-0.5">
+                  <caret line="515" column="28" selection-start-line="515" selection-start-column="28" selection-end-line="515" selection-end-column="28" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -629,8 +629,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Algorithm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42727274">
-          <caret line="170" column="39" selection-start-line="170" selection-start-column="39" selection-end-line="170" selection-end-column="39" />
+        <state vertical-scroll-proportion="1.0454545">
+          <caret line="185" column="0" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -639,8 +639,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/AlgorithmTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.77272725">
-          <caret line="512" column="4" selection-start-line="512" selection-start-column="4" selection-end-line="512" selection-end-column="4" />
+        <state vertical-scroll-proportion="-0.5">
+          <caret line="515" column="28" selection-start-line="515" selection-start-column="28" selection-end-line="515" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
