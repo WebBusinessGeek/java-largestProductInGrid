@@ -92,6 +92,53 @@ public class Algorithm {
         }
         return returnValue;
     }
+
+    public ArrayList <Integer> getUpwardDiagonallyRightElementsInGrid(ArrayList <Integer> grid, int itemsPerRow, int baseElement, int elementsToGet) {
+        ArrayList <Integer> returnValue = new ArrayList<>();
+        int limit = baseElement - (elementsToGet * (itemsPerRow - 1));
+        int pointer = baseElement;
+        int elementDirectlyAboveBase = baseElement - itemsPerRow;
+        int firstElementInFirstRow = 0;
+        int lastElementInFirstRow = itemsPerRow - 1;
+        boolean outOfRange = false;
+
+        if(elementDirectlyAboveBase > lastElementInFirstRow) {
+            while (!(lastElementInFirstRow >= elementDirectlyAboveBase)) {
+                lastElementInFirstRow += itemsPerRow;
+            }
+        }
+
+        int counter = 0;
+        while(counter < elementsToGet) {
+            if((elementDirectlyAboveBase == lastElementInFirstRow) || (elementDirectlyAboveBase < firstElementInFirstRow)) {
+                outOfRange = true;
+            }
+            elementDirectlyAboveBase -= itemsPerRow - 1;
+            lastElementInFirstRow -= itemsPerRow;
+            counter++;
+        }
+
+
+        if(!outOfRange) {
+            while(pointer >= limit) {
+                returnValue.add(grid.get(pointer));
+                pointer-=(itemsPerRow - 1);
+            }
+        }
+        return returnValue;
+    }
+
+  /*  public ArrayList <Integer> getUpwardDiagonallyLeftElementsInGrid() {
+
+    }
+
+    public ArrayList <Integer> getDownwardDiagonallyRightElementsInGrid() {
+
+    }
+
+    public ArrayList <Integer> getDownwardDiagonallyLeftElementsInGrid() {
+
+    }*/
 }
 
 
