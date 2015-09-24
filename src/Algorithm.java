@@ -161,11 +161,13 @@ public class Algorithm {
         return returnValue;
     }
 
-    /*public ArrayList <Integer> getDownwardDiagonallyRightElementsInGrid() {
+    public ArrayList <Integer> getDownwardDiagonallyRightElementsInGrid(ArrayList <Integer> grid, int itemsPerRow, int baseElement, int elementsToGet) {
+        ArrayList <Integer> returnValue = new ArrayList<>();
 
+        return returnValue;
     }
 
-    public ArrayList <Integer> getDownwardDiagonallyLeftElementsInGrid() {
+    /*public ArrayList <Integer> getDownwardDiagonallyLeftElementsInGrid() {
 
     }*/
 }
