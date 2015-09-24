@@ -118,7 +118,6 @@ public class Algorithm {
             counter++;
         }
 
-
         if(!outOfRange) {
             while(pointer >= limit) {
                 returnValue.add(grid.get(pointer));
@@ -128,11 +127,13 @@ public class Algorithm {
         return returnValue;
     }
 
-  /*  public ArrayList <Integer> getUpwardDiagonallyLeftElementsInGrid() {
+    public ArrayList <Integer> getUpwardDiagonallyLeftElementsInGrid(ArrayList <Integer> grid, int itemsPerRow, int baseElement, int elementsToGet) {
+        ArrayList <Integer> returnValue = new ArrayList<>();
 
+        return returnValue;
     }
 
-    public ArrayList <Integer> getDownwardDiagonallyRightElementsInGrid() {
+    /*public ArrayList <Integer> getDownwardDiagonallyRightElementsInGrid() {
 
     }
 
