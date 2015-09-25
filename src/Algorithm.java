@@ -210,7 +210,7 @@ public class Algorithm {
 
         int counter = 0;
         while(counter < elementsToGet) {
-            if(elementDirectlyBelowBaseElement == firstElementOnFirstRow || elementDirectlyBelowBaseElement > firstElementOnLastRow) {
+            if(elementDirectlyBelowBaseElement == firstElementOnFirstRow || (elementDirectlyBelowBaseElement > firstElementOnLastRow && counter != elementsToGet -1)) {
                 outOfRange = true;
             }
             elementDirectlyBelowBaseElement += (itemsPerRow - 1);

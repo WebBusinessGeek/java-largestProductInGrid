@@ -587,7 +587,7 @@ public class AlgorithmTest {
     @Test
     public void itShouldNotAttemptToRetrieveElementsThatAreDownwardAndToTheLeftDiagonallyThatAreOutOfGridRange() {
         Algorithm algo = new Algorithm();
-        int baseElement = 339;
+        int baseElement = 359;
         int elementsToGet = 3;
         int itemsPerRow = 20;
 
@@ -616,8 +616,5 @@ public class AlgorithmTest {
         ArrayList <Integer> result = algo.getDownwardDiagonallyLeftElementsInGrid(grid, itemsPerRow, baseElement, elementsToGet);
         ArrayList <Integer> correct = new ArrayList<>();
         assertEquals(correct, result);
-        /*
-        * This is not working. 339 should not be prevented. Need to revised code.
-        * */
     }
 }
