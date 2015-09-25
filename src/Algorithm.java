@@ -226,6 +226,53 @@ public class Algorithm {
         }
         return returnValue;
     }
+
+    public int getProductOfIntegerArrayList(ArrayList <Integer> arrayListToGetProductFrom) {
+        int returnValue = 1;
+        int counter = 0;
+        while(counter < arrayListToGetProductFrom.size()) {
+            returnValue *= arrayListToGetProductFrom.get(counter);
+            counter++;
+        }
+        return returnValue;
+    }
+
+    public int findLargestProductInGrid(String convertIntoIntArray, int maxIntegers, int itemsPerRow) {
+        int returnValue = 0;
+
+        ArrayList <Integer> grid = this.convertStringIntoIntegerArray(convertIntoIntArray);
+        int limit = grid.size() - 1;
+        int counter = 0;
+        int elementsToGet = maxIntegers - 1;
+        while(counter <= limit) {
+            ArrayList <Integer> up = this.getElementsAboveInGridColumn(grid, itemsPerRow, counter, elementsToGet);
+            ArrayList <Integer> down = this.getElementsBelowInGridColumn(grid, itemsPerRow, counter, elementsToGet);
+            ArrayList <Integer> right = this.getElementsToRightInGridRow(grid, itemsPerRow, counter, elementsToGet);
+            ArrayList <Integer> left = this.getElementsToLeftInGridRow(grid, itemsPerRow, counter, elementsToGet);
+            ArrayList <Integer> rightDiagonalUp = this.getUpwardDiagonallyRightElementsInGrid(grid, itemsPerRow, counter, elementsToGet);
+            ArrayList <Integer> rightDiagonalDown = this.getDownwardDiagonallyRightElementsInGrid(grid, itemsPerRow, counter, elementsToGet);
+            ArrayList <Integer> leftDiagonalUp = this.getUpwardDiagonallyLeftElementsInGrid(grid, itemsPerRow, counter, elementsToGet);
+            ArrayList <Integer> leftDiagonalDown = this.getDownwardDiagonallyLeftElementsInGrid(grid, itemsPerRow, counter, elementsToGet);
+            ArrayList <ArrayList <Integer> > elementsReturned = new ArrayList<>();
+            elementsReturned.add(up);
+            elementsReturned.add(down);
+            elementsReturned.add(right);
+            elementsReturned.add(left);
+            elementsReturned.add(rightDiagonalUp);
+            elementsReturned.add(rightDiagonalDown);
+            elementsReturned.add(leftDiagonalUp);
+            elementsReturned.add(leftDiagonalDown);
+
+            int subCounter = 0;
+            while(subCounter < elementsReturned.size()) {
+                int product = this.getProductOfIntegerArrayList(elementsReturned.get(subCounter));
+                returnValue = returnValue < product ? product : returnValue;
+                subCounter++;
+            }
+            counter++;
+        }
+        return returnValue;
+    }
 }
 
 
